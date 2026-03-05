@@ -1,96 +1,93 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Ashu Birthday</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom right, #ffe6f2, #ffd6ec);
-            text-align: center;
-        }
+<title>Ashu Birthday</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        .page {
-            display: none;
-            height: 100vh;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #ffe6f2, #ffd6ec);
+    text-align: center;
+}
 
-        #page1 {
-            display: flex;
-        }
+.page {
+    display: none;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
 
-        .card {
-            background: white;
-            padding: 25px;
-            border-radius: 25px;
-            width: 85%;
-            max-width: 350px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
+#page1 {
+    display: flex;
+}
 
-        img {
-            width: 180px;
-            border-radius: 20px;
-            margin-bottom: 15px;
-        }
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 25px;
+    width: 90%;
+    max-width: 380px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
 
-        h1 {
-            color: #c2185b;
-            font-size: 22px;
-        }
+img {
+    width: 170px;
+    border-radius: 20px;
+    margin-top: 10px;
+}
 
-        p {
-            color: #555;
-            font-size: 14px;
-        }
+h2 {
+    color: #c2185b;
+}
 
-        button {
-            margin-top: 20px;
-            padding: 12px 25px;
-            background: linear-gradient(to right, #ff4da6, #ff80bf);
-            border: none;
-            color: white;
-            font-size: 15px;
-            border-radius: 25px;
-        }
+p {
+    color: #555;
+    font-size: 14px;
+}
 
-        .progress {
-            width: 200px;
-            height: 8px;
-            background: #eee;
-            border-radius: 10px;
-            margin-top: 15px;
-            overflow: hidden;
-        }
+button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: linear-gradient(to right, #ff4da6, #ff80bf);
+    border: none;
+    color: white;
+    font-size: 15px;
+    border-radius: 25px;
+}
 
-        .bar {
-            height: 100%;
-            width: 0%;
-            background: hotpink;
-            animation: load 3s forwards;
-        }
+.progress {
+    width: 200px;
+    height: 8px;
+    background: #eee;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 15px;
+}
 
-        @keyframes load {
-            0% { width: 0%; }
-            100% { width: 100%; }
-        }
-    </style>
+.bar {
+    height: 100%;
+    width: 0%;
+    background: hotpink;
+    animation: load 3s forwards;
+}
+
+@keyframes load {
+    100% { width: 100%; }
+}
+</style>
 </head>
 
 <body>
 
 <!-- PAGE 1 Loading -->
 <div id="page1" class="page">
-    <div>
-        <h2>🎂 Loading your birthday surprise...</h2>
-        <div class="progress">
-            <div class="bar"></div>
-        </div>
+    <h2>🎂 Loading your birthday surprise...</h2>
+    <div class="progress">
+        <div class="bar"></div>
     </div>
 </div>
 
@@ -98,22 +95,47 @@
 <div id="page2" class="page">
     <div class="card">
         <img src="ashu.jpg.png">
-        <h1>A Cutiepie was born today, 21 years ago!</h1>
-        <p>Yes, it's YOU! A little surprise awaits... 💖</p>
-        <button onclick="startSurprise()">🎁 Start the surprise</button>
+        <h2>A Cutiepie was born today, 21 years ago! 💖</h2>
+        <p>Yes, it's YOU! A little surprise awaits...</p>
+        <button onclick="showPage3()">🎁 Start the surprise</button>
+    </div>
+</div>
+
+<!-- PAGE 3 Cute Photo Section -->
+<div id="page3" class="page">
+    <div class="card">
+        <h2>My Favourite Person 💞</h2>
+
+        <div>
+            <img src="photo1.jpg">
+            <p>My safe place 🫂</p>
+        </div>
+
+        <div>
+            <img src="photo2.jpg">
+            <p>My biggest blessing 💖</p>
+        </div>
+
+        <div>
+            <img src="photo3.jpg">
+            <p>My forever headache but favourite one 😌</p>
+        </div>
+
+        <button onclick="alert('Next surprise coming soon 😏')">Continue 💌</button>
     </div>
 </div>
 
 <script>
-    setTimeout(function(){
-        document.getElementById("page1").style.display = "none";
-        document.getElementById("page2").style.display = "flex";
-    },3000);
+setTimeout(function(){
+    document.getElementById("page1").style.display="none";
+    document.getElementById("page2").style.display="flex";
+},3000);
 
-    function startSurprise(){
-        alert("Next page coming soon 😏💖");
-    }
+function showPage3(){
+    document.getElementById("page2").style.display="none";
+    document.getElementById("page3").style.display="flex";
+}
 </script>
 
 </body>
-  </html>
+    </html>
