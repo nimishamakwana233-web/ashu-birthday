@@ -5,136 +5,155 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom right, #ffe6f2, #ffd6ec);
-    text-align: center;
+
+body{
+margin:0;
+font-family:Arial;
+background:linear-gradient(to bottom right,#ffe6f2,#ffd6ec);
+text-align:center;
 }
 
-.page {
-    display: none;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 20px;
+.page{
+display:none;
+min-height:100vh;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+padding:20px;
 }
 
-#page1 {
-    display: flex;
+#page1{
+display:flex;
 }
 
-.card {
-    background: white;
-    padding: 25px;
-    border-radius: 25px;
-    width: 90%;
-    max-width: 380px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+/* Card design */
+.card{
+background:white;
+padding:25px;
+border-radius:25px;
+width:90%;
+max-width:380px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
 }
 
-img {
-    width: 170px;
-    border-radius: 20px;
-    margin-top: 10px;
+/* PHOTO PAGE DARK MODE */
+.dark{
+background:black;
+color:white;
 }
 
-h2 {
-    color: #c2185b;
+/* Images */
+img{
+width:160px;
+border-radius:18px;
+margin-top:10px;
 }
 
-p {
-    color: #555;
-    font-size: 14px;
+/* Caption spacing */
+.photo-box{
+margin:15px 0;
 }
 
-button {
-    margin-top: 20px;
-    padding: 12px 25px;
-    background: linear-gradient(to right, #ff4da6, #ff80bf);
-    border: none;
-    color: white;
-    font-size: 15px;
-    border-radius: 25px;
+/* Buttons */
+button{
+margin-top:20px;
+padding:12px 25px;
+background:linear-gradient(to right,#ff4da6,#ff80bf);
+border:none;
+color:white;
+font-size:15px;
+border-radius:25px;
 }
 
-.progress {
-    width: 200px;
-    height: 8px;
-    background: #eee;
-    border-radius: 10px;
-    overflow: hidden;
-    margin-top: 15px;
+/* Loading bar */
+.progress{
+width:200px;
+height:8px;
+background:#eee;
+border-radius:10px;
+overflow:hidden;
+margin-top:15px;
 }
 
-.bar {
-    height: 100%;
-    width: 0%;
-    background: hotpink;
-    animation: load 3s forwards;
+.bar{
+height:100%;
+width:0%;
+background:hotpink;
+animation:load 3s forwards;
 }
 
-@keyframes load {
-    100% { width: 100%; }
+@keyframes load{
+100%{width:100%;}
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- PAGE 1 Loading -->
+<!-- PAGE 1 -->
 <div id="page1" class="page">
-    <h2>🎂 Loading your birthday surprise...</h2>
-    <div class="progress">
-        <div class="bar"></div>
-    </div>
+<h2>🎂 Loading your birthday surprise...</h2>
+
+<div class="progress">
+<div class="bar"></div>
 </div>
 
-<!-- PAGE 2 Cutiepie -->
+</div>
+
+<!-- PAGE 2 -->
 <div id="page2" class="page">
-    <div class="card">
-        <img src="ashu.jpg.png">
-        <h2>A Cutiepie was born today, 21 years ago! 💖</h2>
-        <p>Yes, it's YOU! A little surprise awaits...</p>
-        <button onclick="showPage3()">🎁 Start the surprise</button>
-    </div>
+
+<div class="card">
+
+<img src="ashu.jpg.png">
+
+<h2>A Cutiepie was born today, 21 years ago 💖</h2>
+
+<p>Yes it's YOU! A little surprise awaits...</p>
+
+<button onclick="showPage3()">🎁 Start the surprise</button>
+
 </div>
 
-<!-- PAGE 3 Cute Photo Section -->
-<div id="page3" class="page">
-    <div class="card">
-        <h2>My Favourite Person 💞</h2>
+</div>
 
-        <div>
-            <img src="photo1.jpg">
-            <p>My safe place 🫂</p>
-        </div>
+<!-- PAGE 3 PHOTO PAGE -->
+<div id="page3" class="page dark">
 
-        <div>
-            <img src="photo2.jpg">
-            <p>My biggest blessing 💖</p>
-        </div>
+<h2>My Favourite Person 💞</h2>
 
-        <div>
-            <img src="photo3.jpg">
-            <p>My forever headache but favourite one 😌</p>
-        </div>
+<div class="photo-box">
+<img src="photo1.jpg">
+<p>My safe place 🫂</p>
+</div>
 
-        <button onclick="alert('Next surprise coming soon 😏')">Continue 💌</button>
-    </div>
+<div class="photo-box">
+<img src="photo2.jpg">
+<p>My biggest blessing 💖</p>
+</div>
+
+<div class="photo-box">
+<img src="photo3.jpg">
+<p>My forever headache but favourite one 😌</p>
+</div>
+
+<button onclick="alert('Next surprise coming soon 😏')">Continue 💌</button>
+
 </div>
 
 <script>
+
 setTimeout(function(){
-    document.getElementById("page1").style.display="none";
-    document.getElementById("page2").style.display="flex";
+document.getElementById("page1").style.display="none";
+document.getElementById("page2").style.display="flex";
 },3000);
 
 function showPage3(){
-    document.getElementById("page2").style.display="none";
-    document.getElementById("page3").style.display="flex";
+document.getElementById("page2").style.display="none";
+document.getElementById("page3").style.display="flex";
 }
+
 </script>
 
 </body>
