@@ -1,98 +1,102 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Ashu's Birthday Surprise</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ashu Birthday</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
 
 body{
 margin:0;
 font-family:'Poppins',sans-serif;
-background:linear-gradient(135deg,#f3e7ff,#e8d3ff);
+background:linear-gradient(135deg,#ffd6f5,#e6ccff);
+text-align:center;
 overflow-x:hidden;
 }
 
 .page{
 display:none;
-height:100vh;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-text-align:center;
-animation:fade 1s;
+padding:40px;
 }
 
-@keyframes fade{
-from{opacity:0;transform:translateY(20px);}
-to{opacity:1;transform:translateY(0);}
+.active{
+display:block;
 }
 
-/* Loading Page */
-
-#loading{
-display:flex;
-background:linear-gradient(135deg,#fff0ff,#efe2ff);
+h1{
+color:#ff4da6;
 }
-
-.bar{
-width:220px;
-height:12px;
-border-radius:20px;
-border:2px solid #b46cff;
-overflow:hidden;
-margin-top:10px;
-}
-
-.fill{
-height:100%;
-width:0;
-background:#b46cff;
-animation:load 3s forwards;
-}
-
-@keyframes load{
-to{width:100%;}
-}
-
-/* Buttons */
 
 button{
 padding:12px 25px;
 border:none;
-background:#caa6ff;
+border-radius:25px;
+background:#ff66b3;
 color:white;
-border-radius:30px;
 font-size:16px;
 cursor:pointer;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-transition:0.3s;
+margin-top:20px;
 }
 
 button:hover{
 transform:scale(1.05);
 }
 
-/* Image Card */
-
-.card{
-background:white;
-padding:20px;
-border-radius:25px;
-box-shadow:0 10px 25px rgba(0,0,0,0.15);
-}
-
-.card img{
-width:180px;
+img{
+max-width:200px;
 border-radius:20px;
 }
 
-/* Hearts animation */
+.gallery{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+margin-top:20px;
+}
+
+.gifts{
+display:flex;
+justify-content:center;
+gap:40px;
+margin-top:40px;
+}
+
+.gifts img{
+width:120px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.gifts img:hover{
+transform:scale(1.15);
+}
+
+.messageBox{
+margin-top:30px;
+font-size:18px;
+color:#ff4da6;
+}
+
+.cake{
+width:200px;
+}
+
+.hearts{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+}
 
 .heart{
-position:fixed;
-color:#ff7ab6;
-font-size:20px;
-animation:float 6s linear infinite;
+position:absolute;
+font-size:24px;
+animation:float 4s linear infinite;
 }
 
 @keyframes float{
@@ -100,141 +104,167 @@ animation:float 6s linear infinite;
 100%{transform:translateY(-10vh);}
 }
 
-/* Gallery */
-
-.gallery{
-display:flex;
-flex-direction:column;
-gap:35px;
-padding:20px;
-}
-
-.photo{
-background:white;
-padding:15px;
-border-radius:25px;
-box-shadow:0 10px 20px rgba(0,0,0,0.1);
-}
-
-.photo img{
-width:260px;
-border-radius:18px;
-}
-
-.caption{
-margin-top:8px;
-color:#666;
-font-size:14px;
-}
-
 </style>
 </head>
 
 <body>
 
-<!-- PAGE 1 LOADING -->
-
-<div id="loading" class="page">
-
-<h1>🎂</h1>
-<h3>Loading your birthday surprise...</h3>
-
-<div class="bar">
-<div class="fill"></div>
+<div id="loading" class="page active">
+<h1>Preparing a little surprise for you…</h1>
+<p>🎂</p>
 </div>
-
-</div>
-
-<!-- PAGE 2 CUTIEPIE -->
 
 <div id="page2" class="page">
-
-<div class="card">
-
-<img src="ashu.jpg.png">
-
-<h2>A Cutiepie was born today 💜</h2>
-
-<p>21 years ago...</p>
-
-<p>And somehow he became my whole world ✨</p>
-
-<button onclick="nextPage(3)">Start the Surprise 🎁</button>
-
+<h1>A cutiepie was born today, 21 years ago!</h1>
+<p>Yes, it's YOU! A little surprise awaits…</p>
+<img src="ashu.jpg">
+<br>
+<button onclick="nextPage(3)">Start the surprise 🎁</button>
 </div>
-
-</div>
-
-<!-- PAGE 3 BIRTHDAY -->
 
 <div id="page3" class="page">
-
-<h1>Happy Birthday Baby 💕</h1>
-
-<p>You make my world brighter everyday.</p>
-
-<button onclick="nextPage(4)">Click Me</button>
-
-</div>
-
-<!-- PAGE 4 GALLERY -->
-
-<div id="page4" class="page">
-
-<h2>My Favourite Person 💗</h2>
+<h1>My Favourite Person💕</h1>
 
 <div class="gallery">
-
-<div class="photo">
+<div>
 <img src="photo1.jpg">
-<div class="caption">My safe place 🫶</div>
+<p>My safe place 🫂</p>
 </div>
 
-<div class="photo">
+<div>
 <img src="photo2.jpg">
-<div class="caption">My biggest blessing 💗</div>
+<p>My biggest blessing ❤️</p>
 </div>
 
-<div class="photo">
+<div>
 <img src="photo3.jpg">
-<div class="caption">My forever headache but favourite one 😌</div>
+<p>My forever headache but favourite one 😌</p>
+</div>
 </div>
 
+<button onclick="nextPage(4)">Continue 💌</button>
 </div>
 
+<div id="page4" class="page">
+<h1>Ready for a small surprise?</h1>
+<img src="cute-cat1.gif">
+<br>
+<button onclick="nextPage(5)">OFCOURSE YES! ☺️</button>
 </div>
+
+<div id="page5" class="page">
+<h1>First of all tell me… Do you love me?</h1>
+<img src="cute-cat2.jpeg">
+<br>
+<button onclick="nextPage(6)">YES</button>
+<button onclick="showAngry()">NO</button>
+</div>
+
+<div id="page5b" class="page">
+<h1>How dare you click NO 😼<br>Now click YES 😾</h1>
+<img src="angry-cat.jpeg">
+<br>
+<button onclick="nextPage(6)">YES</button>
+</div>
+
+<div id="page6" class="page">
+<h1>I knew it 🤭💖</h1>
+<img src="blushing-cat.jpeg">
+<br>
+<button onclick="nextPage(7)">Click here beb</button>
+</div>
+
+<div id="page7" class="page">
+<h1>Click to open your presents!</h1>
+<p>Hope you like them hehe</p>
+
+<div class="gifts">
+<img src="gift.jpeg" onclick="openGift(1)">
+<img src="gift.jpeg" onclick="openGift(2)">
+<img src="gift.jpeg" onclick="openGift(3)">
+</div>
+
+<div id="giftMessage" class="messageBox"></div>
+
+<br>
+<button onclick="nextPage(8)">Continue 🎂</button>
+</div>
+
+<div id="page8" class="page">
+<h1>Your Birthday Cake</h1>
+
+<img class="cake" src="https://cdn-icons-png.flaticon.com/512/3468/3468379.png">
+
+<p>You are the best part of my life</p>
+<p>I will always love you no matter what</p>
+<p>You will forever be my only option</p>
+<p>I can’t imagine life without you</p>
+
+<button onclick="nextPage(9)">Blow the candles ✨</button>
+</div>
+
+<div id="page9" class="page">
+<h1>
+19 March was the day you were born…<br><br>
+But the day you came into my life<br>
+was the day my world changed.<br><br>
+I don’t know what future holds…<br>
+But I want you in it.<br><br>
+Happy Birthday, My Ashu ❤️
+</h1>
+
+<h2>I Love You So Much 💖</h2>
+</div>
+
+<div class="hearts" id="hearts"></div>
 
 <script>
 
-/* Loading to page2 */
+setTimeout(function(){
+nextPage(2)
+},3000)
 
-document.getElementById("loading").style.display="flex";
-
-setTimeout(()=>{
-document.getElementById("loading").style.display="none";
-document.getElementById("page2").style.display="flex";
-},3000);
-
-/* Page Switch */
-
-function nextPage(num){
-document.querySelectorAll(".page").forEach(p=>p.style.display="none");
-document.getElementById("page"+num).style.display="flex";
+function nextPage(page){
+var pages=document.querySelectorAll(".page")
+pages.forEach(function(p){p.classList.remove("active")})
+document.getElementById("page"+page).classList.add("active")
 }
 
-/* Floating Hearts */
+function showAngry(){
+nextPage("5b")
+}
 
-setInterval(()=>{
-let heart=document.createElement("div");
-heart.className="heart";
-heart.innerHTML="💜";
-heart.style.left=Math.random()*100+"vw";
-heart.style.fontSize=(15+Math.random()*20)+"px";
-document.body.appendChild(heart);
+function openGift(n){
 
-setTimeout(()=>heart.remove(),6000);
+var text=""
 
-},800);
+if(n==1){
+text="Reasons I Love You 💗<br>• You understand me<br>• You make me laugh<br>• You stay even when I'm difficult"
+}
+
+if(n==2){
+text="Our Cute Memories 💌<br>• Late night talks<br>• Your random 'I miss you'<br>• The way you call me cutie"
+}
+
+if(n==3){
+text="My Promise 💞<br>• I'll always support you<br>• I'll never leave you alone<br>• I'll love you more every year"
+}
+
+document.getElementById("giftMessage").innerHTML=text
+}
+
+setInterval(function(){
+var heart=document.createElement("div")
+heart.className="heart"
+heart.innerHTML="💖"
+heart.style.left=Math.random()*100+"%"
+document.getElementById("hearts").appendChild(heart)
+
+setTimeout(function(){
+heart.remove()
+},4000)
+
+},400)
 
 </script>
 
