@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>My Favourite Person</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+background: linear-gradient(135deg,#ffd6ec,#e6d6ff);
+font-family:'Poppins', sans-serif;
+text-align:center;
+margin:0;
+padding:30px;
+}
+
+h1{
+font-family:'Pacifico', cursive;
+color:#ff6fa5;
+font-size:36px;
+margin-bottom:30px;
+}
+
+/* photo frame */
+
+.gallery{
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:25px;
+}
+
+.photo-card{
+background:white;
+padding:10px;
+border-radius:15px;
+box-shadow:0 6px 15px rgba(0,0,0,0.1);
+width:250px;
+}
+
+.photo-card img{
+width:100%;
+border-radius:10px;
+}
+
+.caption{
+margin-top:6px;
+font-size:16px;
+color:#444;
+}
+
+button{
+margin-top:35px;
+padding:14px 28px;
+border:none;
+background:#ff6fa5;
+color:white;
+border-radius:30px;
+font-size:18px;
+cursor:pointer;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>My Favourite Person 💗</h1>
+
+<div class="gallery">
+
+<div class="photo-card">
+<img src="photo1.jpg">
+<div class="caption">My safe place 🫂</div>
+</div>
+
+<div class="photo-card">
+<img src="photo2.jpg">
+<div class="caption">My biggest blessing 💋</div>
+</div>
+
+<div class="photo-card">
+<img src="photo3.jpg">
+<div class="caption">My forever headache but favourite one 🥰</div>
+</div>
+
+</div>
+
+<button onclick="nextPage()">Continue 💌</button>
+
+<script>
+
+function nextPage(){
+window.location.href="page4.html"
+}
+
+</script>
+
+</body>
+
+  </html>
