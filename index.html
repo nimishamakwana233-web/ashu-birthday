@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+
 <title>Birthday Surprise</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
 
@@ -11,23 +15,45 @@ height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-font-family:sans-serif;
+font-family:'Poppins', sans-serif;
 text-align:center;
+margin:0;
+}
+
+.container{
+background:white;
+padding:40px;
+border-radius:25px;
+box-shadow:0 8px 20px rgba(0,0,0,0.1);
+width:300px;
+}
+
+h1{
+font-family:'Pacifico', cursive;
+font-size:40px;
+color:#ff6fa5;
+margin-bottom:10px;
+}
+
+p{
+font-size:18px;
+color:#555;
 }
 
 .loader{
-width:200px;
-height:10px;
+width:220px;
+height:12px;
 background:#eee;
 border-radius:20px;
 overflow:hidden;
 margin:auto;
+margin-top:20px;
 }
 
 .bar{
 height:100%;
 width:0%;
-background:#ff66a3;
+background:#ff6fa5;
 animation:load 3s forwards;
 }
 
@@ -36,19 +62,17 @@ from{width:0;}
 to{width:100%;}
 }
 
-h1{
-color:#6b4ba3;
-}
-
 </style>
+
 </head>
 
 <body>
 
-<div>
+<div class="container">
 
 <h1>🎂</h1>
-<h2>Loading your birthday surprise...</h2>
+
+<p>Loading your birthday surprise...</p>
 
 <div class="loader">
 <div class="bar"></div>
@@ -65,4 +89,5 @@ window.location.href="page2.html"
 </script>
 
 </body>
+
 </html>
